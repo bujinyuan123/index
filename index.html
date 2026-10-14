@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卜晋渊 | 个人静态主页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", sans-serif;
+            background-color: #05091b;
+            color: #e2edff;
+            overflow-x: hidden;
+        }
+        #bgCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -10;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 24px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(12, 18, 40, 0.55);
+            backdrop-filter: blur(12px);
+        }
+        .logo-name {
+            font-size: 26px;
+            font-weight: bold;
+            color: #34d1ff;
+            letter-spacing: 3px;
+        }
+        nav a {
+            color: #b4d7ff;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 17px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            color: #34d1ff;
+            text-shadow: 0 0 12px #34d1ff;
+        }
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 60px 25px;
+        }
+        .section-card {
+            background-color: rgba(16, 26, 58, 0.52);
+            border: 1px solid rgba(52, 209, 255, 0.24);
+            border-radius: 20px;
+            padding: 50px 42px;
+            margin-bottom: 55px;
+            backdrop-filter: blur(8px);
+            transition: 0.45s ease;
+        }
+        .section-card:hover {
+            border-color: rgba(52, 209, 255, 0.65);
+            box-shadow: 0 0 45px rgba(52, 209, 255, 0.2);
+        }
+        .main-title {
+            font-size: 46px;
+            margin-bottom: 14px;
+        }
+        .neon-word {
+            color: #34d1ff;
+            text-shadow: 0 0 16px #34d1ff;
+        }
+        .sub-desc {
+            font-size: 19px;
+            color: #a1c9f0;
+        }
+        .divider-line {
+            width: 180px;
+            height: 4px;
+            background: linear-gradient(90deg, #0072ff, #34d1ff, #00e5ff);
+            margin-top: 28px;
+            border-radius: 2px;
+        }
+        .section-title {
+            font-size: 28px;
+            color: #86d8ff;
+            margin-bottom: 32px;
+        }
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .grid-item {
+            background-color: rgba(28, 42, 80, 0.45);
+            border: 1px solid rgba(52, 209, 255, 0.18);
+            border-radius: 14px;
+            padding: 28px 24px;
+            transition: 0.35s;
+        }
+        .grid-item:hover {
+            transform: translateY(-6px);
+            border-color: rgba(52, 209, 255, 0.5);
+        }
+        .grid-item h3 {
+            color: #56d8ff;
+            margin-bottom: 14px;
+            font-size: 20px;
+        }
+        .grid-item p {
+            color: #c2dbff;
+            line-height: 1.7;
+        }
+        .feeling-paragraph {
+            line-height: 2.0;
+            font-size: 18px;
+            color: #c7ddff;
+        }
+        .text-block{
+            margin-bottom:22px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7398cc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="bgCanvas"></canvas>
+<nav>
+    <div class="logo-name">卜晋渊</div>
+    <div>
+        <a href="#home">首页简介</a>
+        <a href="#hobby">个人爱好</a>
+        <a href="#skill">专业技能</a>
+        <a href="#study">学习日常</a>
+        <a href="#thought">思想感悟</a>
+        <a href="#future">未来规划</a>
+    </div>
+</nav>
+
+<div class="container">
+    <section id="home" class="section-card">
+        <h1 class="main-title">你好，我是 <span class="neon-word">卜晋渊</span></h1>
+        <p class="sub-desc">探索代码逻辑，享受策略博弈，持续学习与成长</p>
+        <div class="divider-line"></div>
+        <div style="margin-top:30px;" class="feeling-paragraph">
+            <p class="text-block">欢迎来到我的个人静态网页。这是我利用AI辅助完成的网页项目，用来记录当下的自我状态。我是一名工科专业学生，一边接触计算机编程相关知识，一边保持丰富的课余爱好。</p>
+            <p class="text-block">我相信理性的代码逻辑与感性的生活爱好并不冲突，二者可以相辅相成。敲代码锻炼严谨的思维，体育运动与棋类游戏磨练心态与大局观。在学习的道路上，我始终保持好奇心，愿意接纳新知识，不怕遇到困难与报错。</p>
+            <p class="text-block">遇到不懂的问题我会主动查找资料，尝试调试，不断试错，一点点提升个人能力。这个网页记录现阶段真实的我，记录我的爱好、已经掌握的能力、平时的学习状态以及对未来的思考。</p>
+        </div>
+    </section>
+
+    <section id="hobby" class="section-card">
+        <h2 class="section-title">🎯 个人爱好</h2>
+        <div class="grid-layout">
+            <div class="grid-item">
+                <h3>🏓 乒乓球</h3>
+                <p>快速挥拍对抗，感受赛场瞬息万变的博弈，锻炼反应与心态。乒乓球非常讲究手感、节奏判断以及临场应变能力。训练和对局的过程，既是身体的运动，也是心智的锻炼。在紧张的学习之余，打乒乓球能够释放压力，调整精神状态。每一次接球、扣杀、防守，都需要快速思考对手的进攻思路。输赢并不是最重要的，享受对抗的过程，不断打磨自己的技术，就是打球带给我的收获。</p>
+            </div>
+            <div class="grid-item">
+                <h3>🃏 三国杀</h3>
+                <p>手牌之间策略推演，阅读对手意图，体验心理博弈的乐趣。三国杀融合历史人物设定、卡牌策略、身份博弈。每一局局势千变万化，没有固定必胜套路。需要根据场上角色、手牌情况、队友状态不断调整自己打法。既要分析别人的行为，也要隐藏自己真实目的。它教会我多角度思考问题，不能只站在自己视角看待局面，学会预判他人选择，权衡利弊做出取舍。</p>
+            </div>
+            <div class="grid-item">
+                <h3>♟️ 象棋</h3>
+                <p>落子三思，布局谋势，沉静思考，注重全局取舍与步步谋划。象棋是典型的静态策略博弈游戏，一步走错就可能满盘被动。下棋需要足够的耐心，不能贪图眼前小利，要兼顾全局得失。每一次落子之前，要预想后续多步变化。下棋的时候，人会变得冷静克制，学会接受失误，从失败对局里面总结教训。这种三思而后行的习惯，也潜移默化影响我平时做事的方式。</p>
+            </div>
+        </div>
+        <div style="margin-top:35px;" class="feeling-paragraph">
+            <p class="text-block">这三项爱好各有特点：乒乓球偏向动态高速对抗；三国杀侧重信息博弈与心理揣测；象棋注重深度推演和全局布局。虽然形式不一样，但内核相通，都在锻炼思考能力、大局观以及抗压心态。在学习疲惫的时候，投入爱好当中，可以很好调节状态，之后再重新回到学习，效率会更高。爱好不会耽误学习，合理安排时间，二者可以互相促进。</p>
+        </div>
+    </section>
+
+    <section id="skill" class="section-card">
+        <h2 class="section-title">💻 专业技能</h2>
+        <div class="grid-layout">
+            <div class="grid-item">
+                <h3>C语言基础</h3>
+                <p>掌握基础语法、分支循环，能够编写基础算法与练习小程序。了解变量、数据类型、运算符、数组、简单函数。可以完成基础作业习题，比如求阶乘、判断奇偶、循环打印图形、简单数值计算。C语言让我理解计算机底层逻辑，体会内存、数据存储的概念。写C代码的过程经常会遇到编译报错，调试报错的过程也锻炼我的排错能力。虽然目前只停留在基础阶段，但我会继续练习，巩固算法思维。</p>
+            </div>
+            <div class="grid-item">
+                <h3>Python基础</h3>
+                <p>熟悉基础语法，可独立编写命令行程序，处理简单业务逻辑。掌握条件判断、循环、列表字典、函数、文件读写。可以写控制台交互小程序，处理文本读写。相比C语言，Python语法更加简洁高效。我也学会使用VS Code作为开发工具，懂得新建项目文件、保存代码、运行调试。本网页就是使用Python程序自动生成HTML文件得到的，这也是Python文件处理能力的实际小案例。</p>
+            </div>
+            <div class="grid-item">
+                <h3>简单视觉项目</h3>
+                <p>接触机器视觉方向，实践颜色识别等简易视觉相关开发项目。初步了解图像采集、图像简单处理的流程。尝试过开发板上面的简单视觉案例，理解从摄像头获取画面，再做分析识别的完整流程。视觉项目综合了编程知识，也需要理解图像的基础原理。目前我还处于入门摸索阶段，很多知识点还没有吃透，但我对这个方向抱有浓厚兴趣，希望往后继续深入学习相关知识。</p>
+            </div>
+        </div>
+        <div style="margin-top:35px;" class="feeling-paragraph">
+            <p class="text-block">现阶段我的编程水平属于入门基础，距离真正熟练开发还有很长距离。很多项目我还不能独立完整完成，经常需要查阅资料、参考示例代码。但我明白编程能力靠不断写代码、不断踩坑积累而来。每一次成功运行一段代码，每一次解决报错，都是实实在在的进步。我不害怕写出来的代码简陋，重要的是动手实践。</p>
+        </div>
+    </section>
+
+    <section id="study" class="section-card">
+        <h2 class="section-title">📖 学习日常</h2>
+        <div class="feeling-paragraph">
+            <p class="text-block">在日常学习当中，我会分配时间兼顾专业课、编程练习与课余爱好。专业课打好理论基础，课余时间拿出一部分练习代码。编程学习并不是一次性看懂书本就可以掌握，必须动手敲写代码。很多知识点看教程感觉听懂，自己上手写代码就会出现各种各样的错误，缩进错误、语法拼写错误、变量逻辑错误都是家常便饭。</p>
+            <p class="text-block">遇到程序报错的时候，我会认真阅读报错提示，分析错误来源，一步步排查问题。我也会利用网络资源查阅教程，看示例代码，对比自己写的程序，找出差距。我习惯做好简单记录，把经常出错的点记下来，尽量避免重复踩同样的坑。</p>
+            <p class="text-block">除了编程之外，我也会学习英语，积累单词，练习阅读，准备大学英语四六级考试。工科学习离不开英语能力，很多技术文档、参考资料都是英文，具备基础阅读能力对以后学习新技术很有帮助。</p>
+            <p class="text-block">学习的时候我也会注意劳逸结合。长时间坐在电脑前敲代码容易精神疲惫，这个时候我会放下电脑，选择运动或者棋类活动，让大脑换一种思考模式。调整好状态之后，再重新回到学习任务，防止低效内耗式的熬夜学习。</p>
+        </div>
+    </section>
+
+    <section id="thought" class="section-card">
+        <h2 class="section-title">✨ 思想感悟</h2>
+        <div class="feeling-paragraph">
+            <p class="text-block">代码代表理性严谨的逻辑世界，乒乓球、象棋与三国杀，带来现实世界的策略对抗。一边调试程序、排查并解决程序bug，一边在球拍与棋盘之中体会博弈思考的乐趣。</p>
+            <p class="text-block">写程序讲究逻辑严谨，一步逻辑出错，整个程序就达不到预期效果；下棋打球也是如此，一个判断失误就会陷入被动。二者内核有共通之处，都要求冷静分析，客观看待得失。写代码遇到bug不要急躁，对局落子也不能冲动冒进。</p>
+            <p class="text-block">人生也和写代码、下棋一样，不可能每一步都完美。会出现失误，会遇到预料之外的状况。重要的不是永不犯错，而是发现问题之后，愿意静下心寻找解决方案。不要畏惧失败，把每一次出错当作学习机会。</p>
+            <p class="text-block">保持对新技术的好奇心，脚踏实地学习，在理性代码与现实爱好之间寻找属于自己的节奏，稳步向前。不追求一夜之间突飞猛进，看重日复一日微小的积累。</p>
+        </div>
+    </section>
+
+    <section id="future" class="section-card">
+        <h2 class="section-title">🚀 未来规划</h2>
+        <div class="feeling-paragraph">
+            <p class="text-block">短期之内，我希望扎实巩固现有的编程基础。把C语言、Python基础吃透，多做习题与小项目，减少低级语法错误。继续探索机器视觉相关的入门案例，多动手实操，而不只是停留在看视频学理论。同时学好学校开设的专业课程，保证专业课成绩，夯实工科底层知识。英语持续积累，完成四六级的目标。</p>
+            <p class="text-block">中期希望可以独立完成更多完整小型项目，不再只能抄写示例代码。能够自己构思需求，设计简单流程，从零实现小工程。拓宽自己的知识面，了解更多计算机相关领域，找到自己更加感兴趣的发展方向。持续保持运动与棋类爱好，维持身心健康，平衡学习与生活。</p>
+            <p class="text-block">长远来看，我希望把学到的技术真正转化为解决实际问题的能力。明白学习没有终点，技术一直在更新迭代，需要一直保持学习习惯。无论未来走向哪一条道路，严谨思考、持续实践、不惧困难的品质，都会一直帮助我向前。</p>
+            <p class="text-block">前路会有很多未知挑战，也会遇到挫折，但我愿意一步一步，踏实往前走。</p>
+        </div>
+    </section>
+</div>
+
+<footer>© 2026 卜晋渊｜AI辅助生成静态网页作业</footer>
+
+<script>
+const canvas = document.getElementById("bgCanvas");
+const ctx = canvas.getContext("2d");
+let width, height;
+let pointList = [];
+
+function resizeCanvas(){
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+class Particle {
+    constructor(){
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 1.4;
+        this.vy = (Math.random() - 0.5) * 1.4;
+    }
+    update(){
+        this.x += this.vx;
+        this.y += this.vy;
+        if(this.x < 0 || this.x > width) this.vx *= -1;
+        if(this.y < 0 || this.y > height) this.vy *= -1;
+    }
+}
+
+for(let i = 0; i < 85; i++){
+    pointList.push(new Particle());
+}
+
+function renderLoop(){
+    ctx.clearRect(0, 0, width, height);
+    for(let i = 0; i < pointList.length; i++){
+        pointList[i].update();
+        for(let j = i + 1; j < pointList.length; j++){
+            let dx = pointList[i].x - pointList[j].x;
+            let dy = pointList[i].y - pointList[j].y;
+            let distance = Math.sqrt(dx*dx + dy*dy);
+            if(distance < 160){
+                ctx.beginPath();
+                ctx.moveTo(pointList[i].x, pointList[i].y);
+                ctx.lineTo(pointList[j].x, pointList[j].y);
+                ctx.strokeStyle = "rgba(52,209,255," + (1 - distance / 160) * 0.4 + ")";
+                ctx.lineWidth = 0.8;
+                ctx.stroke();
+            }
+        }
+    }
+    requestAnimationFrame(renderLoop);
+}
+renderLoop();
+</script>
+</body>
